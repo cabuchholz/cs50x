@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+<!--Form to register for an account, and confirm password-->
+<form action="/buy" method="post">
+    <input autocomplete="off" autofocus name="symbol" placeholder="stock symbol" type="text"><br>
+    <input autocomplete="off" autofocus name="shares" placeholder="# of shares" type="number"><br>
+    <br>
+    <input type="submit" value="Buy">
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<!--Form to look up the price of a certain stock-->
+<form action="/quote" method="post">
+    <input autocomplete="off" autofocus name="symbol" placeholder="stock symbol" type="text"><br>
+    <br>
+    <input type="submit" value="Get Quote">
+</form>
+{% endblock %}

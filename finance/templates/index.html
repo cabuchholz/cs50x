@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+<!--Form to register for an account, and confirm password-->
+
+<div>
+    <h1>Current Holdings</h1>
+    <div>
+        <p></p>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th># of Shares</th>
+                <th>Current Price per Share</th>
+                <th>Total Value of Holding</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for holding in holdings %}
+            <tr>
+                <td>{{ holding.symbol }}</td>
+                <td>{{ holding.shares}}</td>
+                <td>{{ holding.price}}</td>
+                <td>{{ holding.value}}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                <td><b>TOTAL</b></td>
+                <td></td>
+                <td></td>
+                <td><b>{{ total }}</b></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
