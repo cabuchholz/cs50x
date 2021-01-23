@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Who was the 16th President of the United States?</h3>
+
+                <button type="button" id="gw">George Washington</button>
+                <button type="button" id="al">Abraham Lincoln</button>
+                <button type="button" id="gc">Grover Cleveland</button>
+                <p id="el1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Which President was elected for two non-consecutive terms?</h3>
+
+                <input type="text" id="freeform"></input>
+                <button type="button" id="sub">Submit Answer</button>
+                <p id="el2"></p>
+            </div>
+
+        </div>
+
+        <script>
+        document.getElementById("gw").addEventListener("click",
+            function () {document.getElementById("el1").innerHTML = "Incorrect";})
+
+        document.getElementById("gw").addEventListener("click",
+            function () {document.getElementById("gw").style.backgroundColor = 'red';})
+
+        document.getElementById("al").addEventListener("click",
+            function () {document.getElementById("el1").innerHTML = "Correct!";})
+        document.getElementById("al").addEventListener("click",
+            function () {document.getElementById("al").style.backgroundColor = 'green';})
+
+        document.getElementById("gc").addEventListener("click",
+            function () {document.getElementById("el1").innerHTML = "Incorrect";})
+        document.getElementById("gc").addEventListener("click",
+            function () {document.getElementById("gc").style.backgroundColor = 'red';})
+
+        document.getElementById("sub").addEventListener("click", ffcheck)
+
+        function ffcheck()
+        {
+            var input;
+            input = document.getElementById("freeform").value;
+            input = input.toLowerCase();
+            if (input == "grover cleveland")
+            {
+                document.getElementById("el2").innerHTML = "Correct!";
+                document.getElementById("freeform").style.backgroundColor = 'green'
+            }
+            else
+            {
+                document.getElementById("el2").innerHTML = "Incorrect";
+                document.getElementById("freeform").style.backgroundColor = 'red'
+            }
+        }
+
+</script>
+    </body>
+</html>

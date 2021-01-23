@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <script>
+
+            function greet()
+            {
+                alert('hello, body');
+            }
+
+        </script>
+        <title>hello</title>
+    </head>
+    <body>
+        <form id="frm1" action="/action_page.php">
+          First name: <input type="text" name="fname" id='fname'><br>
+          Last name: <input type="text" name="lname"><br><br>
+          <input type="button" onclick="myFunction()" value="Submit">
+        </form>
+    <script>
+        function myFunction() {
+            //alert(document.querySelector('#fname').value);
+            alert(document.getElementById('fname').value);
+        }
+    </script>
+
+    </body>
+
+</html>
